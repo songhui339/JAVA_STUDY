@@ -1,7 +1,6 @@
 package com.kh.lambda;
 
 import com.kh.lambda.basic.C_MethodReference;
-import com.kh.lambda.standard.E_Predicate;
 
 //import com.kh.lambda.basic.A_Lambda;
 
