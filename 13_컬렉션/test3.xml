@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<!-- 마크업 랭기지 -->
+<comment>XML TEST</comment>
+<entry key="Set">HashSet</entry>
+<entry key="List">ArrayList</entry>
+<entry key="Map">HashMap</entry>
+</properties>
+
