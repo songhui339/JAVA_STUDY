@@ -19,7 +19,8 @@ public class Application {
 //		new A_Create().method2();
 //		new A_Create().method3();
 		
-		new A_Filtering().method1();
+//		new A_Filtering().method1();
+		new A_Filtering().method2();
 	}
 
 }
