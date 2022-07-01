@@ -84,19 +84,30 @@ public class A_Filtering {
 		      .forEach(name -> System.out.print(name + " "));
 		
 		System.out.println();
+		System.out.println("--------------------");
 		
+		List<Student> students = Arrays.asList(
+				new Student("이정후", 25, "남자", 80, 50),
+				new Student("이정후", 25, "남자", 80, 50),
+				new Student("이정후", 25, "남자", 80, 50),
+				new Student("이슬기", 30, "남자", 80, 80),
+				new Student("최송희", 20, "여자", 100, 100)
+		);
 		
+		// 성별이 여자인 요소만 출력 
+		System.out.println("성별이 여자인 요소만 출력");
+		students.stream()
+		        .filter((Student student) -> {
+		        	return student.getGender().equals("여자");
+		        })
+		        .forEach(student -> System.out.println(student));
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		// 수학 점수, 영어 점수 둘 다 60점 이상인 요소만 출력 (실습)
+		System.out.println("수학 점수, 영어 점수 둘 다 60점 이상인 요소만 출력");
+		students.stream()
+		        .filter(student -> 
+		        student.getEnglish() >= 60 && student.getMath() >= 60)
+		        .forEach(System.out::println);
 		
 		
 	}
