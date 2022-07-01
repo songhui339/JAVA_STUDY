@@ -1,6 +1,6 @@
 package com.kh.stream;
 
-import com.kh.stream.basic.A_Create;
+import com.kh.stream.intermediate.A_Filtering;
 
 public class Application {
 
@@ -17,7 +17,9 @@ public class Application {
 
 //		new A_Create().method1();
 //		new A_Create().method2();
-		new A_Create().method3();
+//		new A_Create().method3();
+		
+		new A_Filtering().method1();
 	}
 
 }

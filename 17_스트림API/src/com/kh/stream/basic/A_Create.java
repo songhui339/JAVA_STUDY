@@ -1,8 +1,13 @@
 package com.kh.stream.basic;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+
+import com.kh.stream.model.vo.Student;
 
 public class A_Create {
 	/*
@@ -81,8 +86,53 @@ public class A_Create {
 	
 	// 컬렉션으로부터 스트림을 생성하는 방법
 	public void method3() {
+		List<Student> list = Arrays.asList(
+				new Student("이정후", 25, "남자", 80, 50),
+				new Student("이슬기", 30, "남자", 80, 50),
+				new Student("최송희", 20, "여자", 100, 100)
+		);
+		
+		// 기존에 for 문을 사용하여 출력
+		// list.size(); -> list가 가지고 있는 요소의 갯수 (0, 1, 2)
+		System.out.println("for문을 사용하여 출력 > ");
+		for (int i = 0; i < list.size(); i++) {
+			// 에러 남 
+//			System.out.println(list[i]);
+			System.out.println(list.get(i));
+		}
+		
+		System.out.println();
+		
+		// 스트림을 사용하여 출력 
+		// list 객체를 통해 stream 객체를 리턴 받을 수 있음
+		// 요소의 개수만큼 출력 됨 (3개의 요소가 있으니 3번 호출 됨)
+		System.out.println("스트림을 사용하여 출력 > ");
+		Stream<Student> stream = list.stream();
+//		stream.forEach((Student student) -> {System.out.println(student);});
+//		stream.forEach(student -> System.out.println(student));
+		
+		// 최종 처리 메소드는 또 다시 호출 불가
+		/*
+		 * stream은 한번 사용하면 재 사용이 불가능하니까  아래의 방법과 같이 사용을 한다! 
+		 */
+//		stream.forEach(student -> System.out.println(student));
+		list.stream().forEach(System.out::println);
+		System.out.println();
+		
+		// 남자만 가져오게 설정 
+		list.stream().filter(student -> student.getGender().equals("남자")).forEach(System.out::println);
+		
+		// 성별이 남자인 요소들만 가지고 새로운 List 객체 만들기 
+		List<Student> list2 = list.stream()
+								.filter(student -> student.getGender().equals("남자"))
+								.collect(Collectors.toList());
+		
+		System.out.println();
+		System.out.println(list2);
+		
 		
 	}
+				
 	
 	
 	
