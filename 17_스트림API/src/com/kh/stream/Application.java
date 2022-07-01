@@ -23,7 +23,8 @@ public class Application {
 //		new A_Filtering().method1();
 //		new A_Filtering().method2();
 		
-		new B_Sorted().method1();
+//		new B_Sorted().method1();
+		new B_Sorted().method2();
 	}
 
 }

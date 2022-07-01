@@ -62,9 +62,47 @@ public class B_Sorted {
 				.forEach(student -> System.out.println(student));
 		
 		
+	}
+	
+	// 요소가 기본 자료형 일 때
+	public void method2() {
+		// 기본 자료형의 요소를 가지는 스트림은 오름차순으로 정렬한다.
+		Arrays.stream(new int[] {3, 5, 1, 4, 2})
+		      .sorted()
+		      .forEach(value -> System.out.print(value + " "));
 		
+		System.out.println();
 		
-		
+		// 기본 자료형을 내림차순으로 정렬하는 방법 
+		Arrays.stream(new int[] {3, 5, 1, 4, 2})
+			  .boxed() // 기본 자료형을 객체로 boxing 
+	          .sorted(Comparator.reverseOrder())
+	           .forEach(value -> System.out.print(value + " "));
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
