@@ -12,9 +12,12 @@ public class Application {
 		 * 	- 스트림은 Iterator과 비슷한 역할을 하지만 람다식으로 요소를 처리하는 코드를 제공할 수 있고,
 		 *    내부 반복자를 사용해서 병렬 처리와 중간 처리, 최정 처리 작업을 수행할 수 있다.
 		 * 	- 스트림은 컬렉션(배열) 요소에 대해서 중간 처리와 최종 처리 작업을 할 수 있다.
+		 * 
 		 */
 
-		new A_Create().method1();
+//		new A_Create().method1();
+//		new A_Create().method2();
+		new A_Create().method3();
 	}
 
 }

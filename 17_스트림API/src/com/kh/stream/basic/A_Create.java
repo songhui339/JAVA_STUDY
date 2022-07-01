@@ -1,5 +1,6 @@
 package com.kh.stream.basic;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -10,7 +11,13 @@ public class A_Create {
 	 * 
 	 * 스트림 생성 
 	 * 	- 숫자 범위로 스크림을 생성하는 방법
-	 * 	- IntStream의 range(), rangeClosed() 메소드를 이용해서 생성한다.
+	 * 		- IntStream의 range(), rangeClosed() 메소드를 이용해서 생성한다.
+	 *  - 배열로부터 스트림을 생성하는 방법	
+	 *  	- Arrays.stream(배열) 메소드로 스트림을 생성한다
+	 *  	- 각 스트림(Stream, IntStream,...) 의 of(배열) 메소드로 스트림을 생성한다 
+	 *  - 컬렉션으로부터 스트림을 생성하는 방법	
+	 *  	- 컬렉션의 stream() 메소드를 이용해서 생성한다.
+	 *  	
 	 */
 	
 	// 1) 숫자 범위로 스트림을 생성하는 방법 
@@ -27,8 +34,6 @@ public class A_Create {
 		*/
 //		int sum = stream.peek((int value) -> {System.out.print(value + " ");}).sum();
 		int sum = stream.peek(value -> System.out.print(value + " ")).sum();
-		
-		
 		System.out.println("> Sum : " + sum);
 		
 		/*
@@ -39,26 +44,64 @@ public class A_Create {
 		sum = stream.peek(value -> System.out.print(value + " ")).sum();
 		System.out.println("> Sum : " + sum);
 		
+	}
+	
+	// 2) 배열로부터 스트림을 생성하는 방법
+	public void method2() {
+		// 배열 생성 
+		String[] names = {"이정후", "김태진", "이슬기", "최송희", "이정후"};
 		
+		// for문을 사용하여 출력 (for-each문)
+		System.out.print("반복문을 사용하여 출력 > ");
+		for (String name : names) {
+			System.out.print(name + " ");
+			// 중복되는 값을 출력 안되게 하기
+			
+		}
 		
+//		for (int i = 0; i < names.length; i++) {
+//			System.out.print(names[i] + " ");
+//		}
 		
+		System.out.println();
 		
+		// 스트림을 사용하여 출력
+		// type 파라미터 (T) -> String 
+		System.out.print("스트림을 사용하여 출력 > ");
+//		Stream<String> stream = Arrays.stream(names);
+//		Stream<String> stream = Stream.of(names);
+		Stream<String> stream = Stream.of("이정후", "김태진", "이슬기", "최송희", "이정후");
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+//		stream.forEach((String name) -> {System.out.print(name + " ");});
+//		stream.forEach(name -> System.out.print(name + " "));
+		// 중복되는 값 출력 안되게 하기 
+		stream.distinct().forEach(name -> System.out.print(name + " "));
 		
 	}
+	
+	// 컬렉션으로부터 스트림을 생성하는 방법
+	public void method3() {
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
