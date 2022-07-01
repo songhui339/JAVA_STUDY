@@ -30,6 +30,35 @@ public class A_Create {
 		
 		
 		System.out.println("> Sum : " + sum);
+		
+		/*
+		 * 1 ~ 10 까지의 합
+		 */
+		// rangeClosed() : 첫 번째 매개값 ~ 두번째 매개 값까지 값을 요소로 가지는 스트림 객체를 생성
+		stream = IntStream.rangeClosed(1, 10);
+		sum = stream.peek(value -> System.out.print(value + " ")).sum();
+		System.out.println("> Sum : " + sum);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }
