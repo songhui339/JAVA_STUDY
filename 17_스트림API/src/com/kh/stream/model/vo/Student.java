@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 //@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student {
+public class Student implements Comparable<Student>{
 	private String name;
 	
 	private int age;
@@ -22,6 +22,11 @@ public class Student {
 	private int math;
 	
 	private int english;
+
+	@Override
+	public int compareTo(Student student) {
+		return Integer.compare(this.age, student.age);
+	}
 
 	
 	

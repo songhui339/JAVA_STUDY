@@ -41,18 +41,25 @@ public class B_Sorted {
 	         .sorted(Comparator.reverseOrder())
 	         .forEach(name -> System.out.print(name + " "));
 		
-		
+		System.out.println();
+		System.out.println("--------------------");
+		System.out.println();
 		
 		/* -----------------------------------------  */
 		
 		List<Student> students = Arrays.asList(
 				new Student("이정후", 25, "남자", 80, 50),
-				new Student("이정후", 25, "남자", 80, 50),
-				new Student("이정후", 25, "남자", 80, 50),
-				new Student("이슬기", 30, "남자", 80, 80),
-				new Student("최송희", 20, "여자", 100, 100)
+				new Student("이슬기", 31, "남자", 80, 80),
+				new Student("최송희", 29, "여자", 100, 100)
 		);
 		
+		students.stream()
+			    // Comparator 인터페이스의 Compare 메소드 구현 
+//				.sorted((o1, o2) -> o1.getAge() - o2.getAge())
+//		 	    .sorted(Comparator.naturalOrder()) // comparator 인터페이스를 구현하기 전에는 오류 뜸  
+				.sorted(Comparator.reverseOrder())
+//				.sorted()
+				.forEach(student -> System.out.println(student));
 		
 		
 		
