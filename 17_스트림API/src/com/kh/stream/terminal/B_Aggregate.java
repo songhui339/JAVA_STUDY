@@ -73,9 +73,30 @@ public class B_Aggregate {
 		System.out.println("2의 배수의 첫 번째 요소 : " +findFirst.getAsInt());
 		
 		// ?????
-		OptionalInt findAny = IntStream.of(values).filter(value -> value % 2 == 0).findAny();
-		System.out.println(findAny.getAsInt());
+//		OptionalInt findAny = IntStream.of(values).filter(value -> value % 2 == 0).findAny();
+//		System.out.println(findAny.getAsInt());
 		
+		System.out.println("-------------------");
+		
+		/* 커스텀 집계 */
+		// 2의 배수의 곱 (커스텁 집계)
+//		int result = Arrays.stream(values)
+//			  .filter(value -> value % 2 == 0)
+//			  .reduce((left, right) -> left * right)
+//			  .orElse(0);
+		System.out.print("2의 배수의 곱 : ");
+		Arrays.stream(values)
+		  	  .filter(value -> value % 2 == 0)
+		      .reduce((left, right) -> left * right)
+		      .ifPresent(System.out::println);
+		
+		// 실무에서 써본적은 없다고 함ㅎ 
+		int result = Arrays.stream(values)
+	  	  	  			   .filter(value -> value % 2 == 0)
+	  	  	  			   // identity 값이 먼저 배열 스트림에 들어가게 됨 
+	  	  	  			   // 초기값 지정 
+	                       .reduce(2, (left, right) -> left * right);
+		System.out.println("identity 값을 받은 후 곱셈 결과 : " + result);
 		
 		
 		

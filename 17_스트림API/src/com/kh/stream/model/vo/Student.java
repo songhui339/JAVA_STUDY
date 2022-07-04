@@ -13,6 +13,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Student implements Comparable<Student>{
+	// C_Collect 에서 새로 추가함 그러니 에러가 발생함 
+	// AllArgsConstructor 어노테이션 땜에 그럼 
+	private int idx;
+	
 	private String name;
 	
 	private int age;
@@ -22,11 +26,24 @@ public class Student implements Comparable<Student>{
 	private int math;
 	
 	private int english;
+	
+	
+	public Student(String name, int age, String gender, int math, int english) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+		this.math = math;
+		this.english = english;
+	}
 
 	@Override
 	public int compareTo(Student student) {
 		return Integer.compare(this.age, student.age);
 	}
+
+
+
 
 	
 	

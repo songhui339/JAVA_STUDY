@@ -5,6 +5,7 @@ import com.kh.stream.intermediate.C_Mapping;
 import com.kh.stream.intermediate.D_Looping;
 import com.kh.stream.terminal.A_Match;
 import com.kh.stream.terminal.B_Aggregate;
+import com.kh.stream.terminal.C_Collect;
 
 public class Application {
 
@@ -42,7 +43,9 @@ public class Application {
 //		new A_Match().method1();
 //		new A_Match().method2();
 		
-		new B_Aggregate().method1();
+//		new B_Aggregate().method1();
+		
+		new C_Collect().method1();
 		
 	
 	}
