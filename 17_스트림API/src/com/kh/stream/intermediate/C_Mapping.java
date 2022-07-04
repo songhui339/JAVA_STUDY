@@ -1,6 +1,7 @@
 package com.kh.stream.intermediate;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 import com.kh.stream.model.vo.Student;
@@ -12,8 +13,8 @@ public class C_Mapping {
 	 * 	- 중간 처리 기능으로 스트림의 요소를 다른 요소로 대체하는 작업을 말한다
 	 * 		- mapXXX() : 요소를 대체하는 요소로 구성된 새로운 스트림을 생성한다
 	 * 		- flatMapXXX() : 하나의 요소를 복수의 요소들로 구성된 새로운 스트림을 생성한다 (조금 복잡함)
-	 * 		- asDoubleStream() : IntStream, LongStream을 DoubleStream으로 변환해서 리턴
-	 * 		- asLongStream() : IntStream, DoubleStream을 LongStream으로 변환해서 리턴
+	 * 		- asDoubleStream() : IntStream을 DoubleStream으로 변환해서 리턴
+	 * 		- asLongStream() : IntStream을 LongStream으로 변환해서 리턴
 	 * 		- boxed() : int, long, double 요소를 Integer, Long, Double 요소로 박싱해서 스트림을 생성하고 리턴한다
 	 */
 	
@@ -64,9 +65,45 @@ public class C_Mapping {
 			.forEach(System.out::println);
 	}
 	
-	
+	// asDoubleStream(), asLongStream(), boxed()
 	public void method3() {
-		System.out.println("실행 TEST");
+		int[] array1 = {1, 2, 3, 4, 5};
+		double[] array2 = {1.1, 2.2, 3.3, 4.4, 5.5};
+		
+		// 정수형 배열인 array1을 실수형 타입으로 변환 
+		System.out.println("정수형 배열인 array1을 실수형 타입으로 변환");
+		Arrays.stream(array1)
+//			  .asDoubleStream()
+			  .asLongStream()
+			  .forEach(System.out::println);
+		
+		System.out.println();
+		
+		Arrays.stream(array2)
+		      .boxed()
+		      .sorted(Comparator.reverseOrder())
+		      .forEach(System.out::println);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
