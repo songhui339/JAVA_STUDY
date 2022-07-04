@@ -1,7 +1,7 @@
 package com.kh.stream;
 
-import com.kh.stream.intermediate.A_Filtering;
 import com.kh.stream.intermediate.B_Sorted;
+import com.kh.stream.intermediate.C_Mapping;
 
 public class Application {
 
@@ -24,7 +24,10 @@ public class Application {
 //		new A_Filtering().method2();
 		
 //		new B_Sorted().method1();
-		new B_Sorted().method2();
+//		new B_Sorted().method2();
+		
+//		new C_Mapping().method1();
+		new C_Mapping().method2();
 	}
 
 }
