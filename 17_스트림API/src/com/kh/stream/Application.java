@@ -4,6 +4,7 @@ import com.kh.stream.intermediate.B_Sorted;
 import com.kh.stream.intermediate.C_Mapping;
 import com.kh.stream.intermediate.D_Looping;
 import com.kh.stream.terminal.A_Match;
+import com.kh.stream.terminal.B_Aggregate;
 
 public class Application {
 
@@ -39,7 +40,9 @@ public class Application {
 		
 		/* 3) 최종 처리 함수 */
 //		new A_Match().method1();
-		new A_Match().method2();
+//		new A_Match().method2();
+		
+		new B_Aggregate().method1();
 		
 	
 	}
