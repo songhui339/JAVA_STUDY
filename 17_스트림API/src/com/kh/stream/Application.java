@@ -27,7 +27,9 @@ public class Application {
 //		new B_Sorted().method2();
 		
 //		new C_Mapping().method1();
-		new C_Mapping().method2();
+//		new C_Mapping().method2();
+		new C_Mapping().method3();
+		
 	}
 
 }

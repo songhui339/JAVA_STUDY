@@ -43,7 +43,29 @@ public class C_Mapping {
 		
 	}
 	
+	// flatMapXXX()
 	public void method2() {
+		// 띄어쓰기에 맞춰서 문자를 나눠줄거임 
+		List<String> list = Arrays.asList("Java11 Lambda", "Stream API Filtering Mapping");
+		
+		list.stream().forEach(System.out::println);
+		
+		System.out.println();
+		
+		list.stream()
+//			.flatMap(str -> {
+//				// 첫번째 문자열을 공백을 기준으로 쪼개서 하나의 배열로 만들어주기 
+//				String[] array = str.split(" ");
+//				
+//				// 만들어진 배열을 스트림으로 만들어서 리턴 
+//				return Arrays.stream(array);
+//			})
+			.flatMap(str -> Arrays.stream(str.split(" ")))
+			.forEach(System.out::println);
+	}
+	
+	
+	public void method3() {
 		System.out.println("실행 TEST");
 	}
 
