@@ -3,6 +3,7 @@ package com.kh.stream;
 import com.kh.stream.intermediate.B_Sorted;
 import com.kh.stream.intermediate.C_Mapping;
 import com.kh.stream.intermediate.D_Looping;
+import com.kh.stream.terminal.A_Match;
 
 public class Application {
 
@@ -17,10 +18,12 @@ public class Application {
 		 * 
 		 */
 
+		/* 1) 생성 */
 //		new A_Create().method1();
 //		new A_Create().method2();
 //		new A_Create().method3();
 		
+		/* 2) 중간 처리 함수 */
 //		new A_Filtering().method1();
 //		new A_Filtering().method2();
 		
@@ -31,8 +34,14 @@ public class Application {
 //		new C_Mapping().method2();
 //		new C_Mapping().method3();
 		
-		new D_Looping().method1();
+//		new D_Looping().method1();
 		
+		
+		/* 3) 최종 처리 함수 */
+//		new A_Match().method1();
+		new A_Match().method2();
+		
+	
 	}
 
 }
