@@ -2,6 +2,7 @@ package com.kh.stream;
 
 import com.kh.stream.intermediate.B_Sorted;
 import com.kh.stream.intermediate.C_Mapping;
+import com.kh.stream.intermediate.D_Looping;
 
 public class Application {
 
@@ -28,7 +29,9 @@ public class Application {
 		
 //		new C_Mapping().method1();
 //		new C_Mapping().method2();
-		new C_Mapping().method3();
+//		new C_Mapping().method3();
+		
+		new D_Looping().method1();
 		
 	}
 
